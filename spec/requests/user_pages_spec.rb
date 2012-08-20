@@ -1,8 +1,13 @@
 require 'spec_helper'
 
-describe "User Pages" do
-	subject { page }
-  
+describe User do
+	
+	before do 
+		@user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+  	end
+
+  	subject { @user }
+
   describe "profile page" do
   	let(:user)	{ FactoryGirl.create(:user) }
   	before { visit user_path(user) }
@@ -32,6 +37,8 @@ describe "User Pages" do
 
  		it "should create a user" do
  			expect { click_button submit }.to change(User, :count).by(1)
+
+ 		it { should have_link('Sign out') }
  		end
  	end
  end

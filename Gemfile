@@ -25,7 +25,7 @@ end
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-gem 'jquery-rails', '2.0.2'
+gem 'jquery-rails', '3.1.3'
 
 group :test, :development do
   gem 'rspec-rails', '2.11.0'
